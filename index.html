@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Frontend Mentor challenge junior level. HTML, CSS and JAVASCRIPT"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Frontend Mentor | Advice generator app</title>
+  </head>
+  <body>
+    <main class="main__container">
+      <div class="advice__container">
+        <h1 class="advice__header">Advice #<span id="advice__id">117</span></h1>
+        <p class="advice__text">
+          "Nothing in the world can take the place of Persistence. Talent will not; nothing is more
+          common than unsuccessful men with talent. Genius will not; unrewarded genius is almost a
+          proverb. Education will not; the world is full of educated derelicts. The slogan 'Press
+          On' has solved and always will solve the problems of the human race."
+        </p>
+        <div class="bar__container">
+          <div class="bar bar--1"></div>
+          <div class="bar bar--2"></div>
+        </div>
+      </div>
+      <button class="button">
+        <span class="material-icons-round dice"> casino </span>
+      </button>
+    </main>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Advice #<!-- Advice ID goes here -->
-
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer class="attribution">
+      Challenge by
+      <a
+        class="frontendmentor"
+        href="https://www.frontendmentor.io?ref=challenge"
+        rel="noopener noreferrer"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/Dev-Caesar" target="_blank" class="username">Dev_Caesar</a>.
+    </footer>
+  </body>
 </html>
