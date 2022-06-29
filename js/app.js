@@ -4,25 +4,25 @@
 // api url
 const apiUrl = `https://api.adviceslip.com`;
 // DOM Objects
-const adviceContainer = document.querySelector(".advice-container");
+const adviceContainer = document.querySelector(".advice__container");
+const btnFetchAdvice = document.querySelector(".button");
 // Fetch data from api
 const fetchData = async function (url) {
   const res = await fetch(`${url}/advice`);
   const { slip: dataObject } = await res.json();
-  return dataObject;
+  renderAdvice(dataObject);
 };
 
-//generate html template
-const generateTemplate = function (dataObject) {
-  html = `
-    <h1 class="advice__header">Advice #<span id="advice__id">${dataObject.id}</span></h1>
-    <p class="advice__text"> ${dataObject.advice}</p>
-    `;
-  return html;
-};
 // render template to the DOM
-const renderAdvice = function () {
-  adviceContainer.innerHTML = "";
-  adviceContainer.insertAdjacentHTML();
+const renderAdvice = function (dataObject) {
+  const html = `
+    <h1 class="advice__header">Advice #<span id="advice__id">${dataObject.id}</span></h1>
+    <p class="advice__text">"${dataObject.advice}"</p>
+    `;
+  adviceContainer.insertAdjacentHTML("beforeend", html);
 };
-fetchData(apiUrl);
+
+btnFetchAdvice.addEventListener("click", () => {
+  adviceContainer.innerHTML = "";
+  fetchData(apiUrl);
+});
