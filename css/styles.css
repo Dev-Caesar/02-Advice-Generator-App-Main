@@ -26,20 +26,18 @@ body {
   background-color: var(--dark-blue);
   font-family: var(--font);
 }
-
-.main__container {
-  position: relative;
+.container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 4rem;
+  align-items: center;
 }
-.advice__container {
+
+.main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 90vw;
   max-width: 54rem;
   gap: 2rem;
@@ -47,7 +45,9 @@ body {
   background-color: var(--dark-grayish-blue);
   box-shadow: 20px 20px 0px 2px hsl(0deg 0% 0% / 13%);
 }
-
+.advice__container {
+  text-align: center;
+}
 .advice__header {
   color: var(--neon-green);
   letter-spacing: 0.3rem;
@@ -88,11 +88,10 @@ body {
 }
 
 .button {
-  position: absolute;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  bottom: 1rem;
+  transform: translateY(-3rem);
 }
 .dice {
   color: var(--dark-blue);
@@ -113,7 +112,7 @@ body {
 
 /* footer styles */
 .attribution {
-  padding: 2rem;
+  padding-top: 2rem;
   font-size: 1.5rem;
   text-align: center;
   color: var(--light-cyan);
@@ -122,6 +121,7 @@ body {
 
 a:link,
 a:visited {
+  line-height: 1.7;
   text-decoration: none;
   color: inherit;
   border-bottom: 3px solid var(--grayish-blue);
