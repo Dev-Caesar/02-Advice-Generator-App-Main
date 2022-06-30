@@ -1,13 +1,29 @@
-"use-strict";
-// https://api.adviceslip.com
-
+'use-strict';
 // api url
 const apiUrl = `https://api.adviceslip.com`;
 // DOM Objects
-const adviceContainer = document.querySelector(".advice__container");
-const btnFetchAdvice = document.querySelector(".button");
+const adviceContainer = document.querySelector('.advice__container');
+const adviceId = document.querySelector('#advice__id');
+const adviceText = document.querySelector('.advice__text');
+const btnFetchAdvice = document.querySelector('.button');
+const tip = document.querySelector('.tip');
+const cssSpinner = document.querySelector('.spinner');
+
+// showSpinner
+const showSpinner = function () {
+  cssSpinner.hidden = false;
+
+  adviceContainer.hidden = true;
+};
+
+// hide spinner
+const hideSpinner = function () {
+  cssSpinner.hidden = true;
+  adviceContainer.hidden = false;
+};
 // Fetch data from api
 const fetchData = async function (url) {
+  showSpinner();
   const res = await fetch(`${url}/advice`);
   const { slip: dataObject } = await res.json();
   renderAdvice(dataObject);
@@ -15,14 +31,12 @@ const fetchData = async function (url) {
 
 // render template to the DOM
 const renderAdvice = function (dataObject) {
-  const html = `
-    <h1 class="advice__header">Advice #<span id="advice__id">${dataObject.id}</span></h1>
-    <p class="advice__text">"${dataObject.advice}"</p>
-    `;
-  adviceContainer.insertAdjacentHTML("beforeend", html);
+  adviceId.textContent = dataObject.id;
+  adviceText.textContent = dataObject.advice;
+  hideSpinner();
 };
 
-btnFetchAdvice.addEventListener("click", () => {
-  adviceContainer.innerHTML = "";
+btnFetchAdvice.addEventListener('click', () => {
+  tip.hidden = true;
   fetchData(apiUrl);
 });

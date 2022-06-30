@@ -6,7 +6,7 @@
   --grayish-blue: hsl(217, 19%, 38%);
   --dark-grayish-blue: hsl(217, 19%, 24%);
   --dark-blue: hsl(218, 23%, 16%);
-  --font: "Manrope", sans-serif;
+  --font: 'Manrope', sans-serif;
 }
 
 /* reset */
@@ -25,9 +25,10 @@ html {
 body {
   background-color: var(--dark-blue);
   font-family: var(--font);
+  font-weight: 800;
 }
 .container {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 90vw;
   max-width: 54rem;
   gap: 2rem;
@@ -45,6 +47,7 @@ body {
   background-color: var(--dark-grayish-blue);
   box-shadow: 20px 20px 0px 2px hsl(0deg 0% 0% / 13%);
 }
+
 .advice__container {
   text-align: center;
 }
@@ -57,13 +60,18 @@ body {
   padding-bottom: 1.5rem;
 }
 
-.advice__text {
+.advice__text,
+.tip {
   text-align: center;
   font-size: clamp(2.3rem, 2.1239rem + 0.4695vw, 2.8rem);
   color: var(--light-cyan);
   padding-bottom: 1rem;
 }
 
+.tip {
+  font-size: clamp(1.5rem, 2.1239rem + 0.4695vw, 2rem);
+  font-weight: 200;
+}
 .bar__container {
   display: flex;
   align-items: center;
@@ -81,7 +89,7 @@ body {
 }
 .bar__container::before,
 .bar__container::after {
-  content: "";
+  content: '';
   width: 45%;
   height: 0.1rem;
   background-color: var(--light-cyan);
@@ -131,4 +139,22 @@ a:hover {
 }
 a:active {
   color: var(--soft-red);
+}
+
+/* spinner */
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 9px solid;
+  border-color: #dbdcef;
+  border-right-color: #52ffa8;
+  animation: spinner-d3wgkg 0.8s infinite linear;
+}
+
+@keyframes spinner-d3wgkg {
+  to {
+    transform: rotate(1turn);
+  }
 }
